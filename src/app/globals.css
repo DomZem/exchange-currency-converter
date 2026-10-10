@@ -1,26 +1,174 @@
 @import 'tailwindcss';
-
-:root {
-	--background: #ffffff;
-	--foreground: #171717;
-}
+@import 'tw-animate-css';
+@import 'shadcn/tailwind.css';
 
 @theme inline {
 	--color-background: var(--background);
 	--color-foreground: var(--foreground);
-	--font-sans: var(--font-geist-sans);
-	--font-mono: var(--font-geist-mono);
+
+	--font-sans: var(--font-sans);
+	--font-mono: var(--font-jetbrains-mono);
+	--font-heading: var(--font-sans);
+
+	--color-chart-5: var(--chart-5);
+	--color-chart-4: var(--chart-4);
+	--color-chart-3: var(--chart-3);
+	--color-chart-2: var(--chart-2);
+	--color-chart-1: var(--chart-1);
+
+	--color-ring: var(--ring);
+	--color-input: var(--input);
+	--color-border: var(--border);
+	--color-destructive: var(--destructive);
+
+	--color-rate-positive: var(--rate-positive);
+	--color-rate-negative: var(--rate-negative);
+
+	--color-accent-foreground: var(--accent-foreground);
+	--color-accent: var(--accent);
+
+	--color-muted-foreground: var(--muted-foreground);
+	--color-muted: var(--muted);
+
+	--color-secondary-foreground: var(--secondary-foreground);
+	--color-secondary: var(--secondary);
+
+	--color-primary-foreground: var(--primary-foreground);
+	--color-primary: var(--primary);
+
+	--color-popover-foreground: var(--popover-foreground);
+	--color-popover: var(--popover);
+
+	--color-card-foreground: var(--card-foreground);
+	--color-card: var(--card);
+
+	--color-live-rate-card-foreground: var(--live-rate-card-foreground);
+	--color-live-rate-card: var(--live-rate-card);
+
+	--radius-sm: calc(var(--radius) * 0.6);
+	--radius-md: calc(var(--radius) * 0.8);
+	--radius-lg: var(--radius);
+	--radius-xl: calc(var(--radius) * 1.4);
+	--radius-2xl: calc(var(--radius) * 1.8);
+	--radius-3xl: calc(var(--radius) * 2.2);
+	--radius-4xl: calc(var(--radius) * 2.6);
+
+	/* colors */
+	--color-lime-500: hsl(71, 92%, 60%); /* DONE #CEF739 */
+
+	--color-neutral-900: hsl(0, 0%, 4%); /* DONE #0A0A0A */
+	--color-neutral-700: hsl(240, 4%, 9%); /* DONE #171719 */
+	--color-neutral-600: hsl(240, 3%, 13%); /* DONE #202022 */
+	--color-neutral-500: hsl(0, 0%, 18%); /* DONE #2E2E2E */
+	--color-neutral-400: hsl(0, 0%, 24%); /* DONE #3D3D3D */
+	--color-neutral-300: hsl(240, 1%, 27%); /* DONE #454547 */
+	--color-neutral-200: hsl(0, 0%, 62%); /* DONE #9D9D9D */
+	--color-neutral-100: hsl(0, 0%, 78%); /* DONE #C6C6C6 */
+	--color-neutral-50: hsl(0, 0%, 100%); /* DONE #FFFFFF */
+
+	/* typography */
+	--text-preset-6: 0.625rem;
+	--text-preset-6--line-height: 100%;
+	--text-preset-6--letter-spacing: 0;
+	--text-preset-6--font-weight: 400;
+
+	--text-preset-5-medium: 0.75rem;
+	--text-preset-5-medium--line-height: 130%;
+	--text-preset-5-medium--letter-spacing: 0.03125rem;
+	--text-preset-5-medium--font-weight: 500;
+
+	--text-preset-5-regular: 0.75rem;
+	--text-preset-5-regular--line-height: 120%;
+	--text-preset-5-regular--letter-spacing: 0.03125rem;
+	--text-preset-5-regular--font-weight: 400;
+
+	--text-preset-4: 0.875rem;
+	--text-preset-4--line-height: 120%;
+	--text-preset-4--letter-spacing: 0.0625rem;
+	--text-preset-4--font-weight: 400;
+
+	--text-preset-3-bold: 1rem;
+	--text-preset-3-bold--line-height: 110%;
+	--text-preset-3-bold--letter-spacing: 0.0625rem;
+	--text-preset-3-bold--font-weight: 700;
+
+	--text-preset-3-medium: 1rem;
+	--text-preset-3-medium--line-height: 120%;
+	--text-preset-3-medium--letter-spacing: 0.0625rem;
+	--text-preset-3-medium--font-weight: 500;
+
+	--text-preset-3-regular: 1rem;
+	--text-preset-3-regular--line-height: 120%;
+	--text-preset-3-regular--letter-spacing: 0.0625rem;
+	--text-preset-3-regular--font-weight: 400;
+
+	--text-preset-2-bold: 1.25rem;
+	--text-preset-2-bold--line-height: 140%;
+	--text-preset-2-bold--letter-spacing: -0.03125rem;
+	--text-preset-2-bold--font-weight: 700;
+
+	--text-preset-2-regular: 1.25rem;
+	--text-preset-2-regular--line-height: 120%;
+	--text-preset-2-regular--letter-spacing: -0.03125rem;
+	--text-preset-2-regular--font-weight: 400;
+
+	--text-preset-1: 2rem;
+	--text-preset-1--line-height: 100%;
+	--text-preset-1--letter-spacing: -0.03125rem;
+	--text-preset-1--font-weight: 700;
 }
 
-@media (prefers-color-scheme: dark) {
-	:root {
-		--background: #0a0a0a;
-		--foreground: #ededed;
+:root {
+	--background: hsl(0, 0%, 4%); /* DONE neutral-900 #0A0A0A */
+	--foreground: hsl(0, 0%, 100%); /* DONE neutral-50 #FFFFFF */
+
+	--card: hsl(240, 3%, 13%); /* DONE neutral-600 #202022 */
+	--card-foreground: hsl(0, 0%, 78%); /* DONE neutral-100 #C6C6C6 */
+
+	--live-rate-card: hsl(240, 4%, 9%); /* DONE neutral-700 #171719 */
+	--live-rate-card-foreground: hsl(0, 0%, 62%); /* DONE neutral-200 #9D9D9D */
+
+	--popover: hsl(240, 3%, 13%); /* DONE neutral-700 #171719 */
+	--popover-foreground: hsl(0, 0%, 100%); /* DONE neutral-50 #FFFFFF */
+
+	--primary: hsl(71, 92%, 60%); /* DONE lime-500 #CEF739 */
+	--primary-foreground: hsl(0, 0%, 4%); /* DONE neutral-900 #0A0A0A */
+
+	--secondary: oklch(0.97 0 0);
+	--secondary-foreground: oklch(0.205 0 0);
+
+	--muted: oklch(0.97 0 0);
+	--muted-foreground: oklch(0.556 0 0);
+
+	--accent: oklch(0.97 0 0);
+	--accent-foreground: oklch(0.205 0 0);
+
+	--destructive: oklch(0.577 0.245 27.325);
+	--border: hsl(0, 0%, 24%); /* DONE neutral-400 #3D3D3D */
+	--input: hsl(240, 4%, 9%); /* DONE neutral-700 #171719 */
+	--ring: oklch(0.708 0 0);
+
+	--rate-positive: hsl(104, 96%, 47%); /* DONE green-500 #42EB05 */
+	--rate-negative: hsl(0, 100%, 63%); /* DONE red-500 #FF4141 */
+
+	--chart-1: oklch(0.87 0 0);
+	--chart-2: oklch(0.556 0 0);
+	--chart-3: oklch(0.439 0 0);
+	--chart-4: oklch(0.371 0 0);
+	--chart-5: oklch(0.269 0 0);
+	--radius: 0.625rem;
+}
+
+@layer base {
+	* {
+		@apply border-border outline-ring/50;
 	}
-}
 
-body {
-	background: var(--background);
-	color: var(--foreground);
-	font-family: Arial, Helvetica, sans-serif;
+	body {
+		@apply bg-background text-foreground;
+	}
+
+	html {
+		@apply font-mono;
+	}
 }
