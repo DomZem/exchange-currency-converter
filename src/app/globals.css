@@ -134,8 +134,8 @@
 	--primary: hsl(71, 92%, 60%); /* DONE lime-500 #CEF739 */
 	--primary-foreground: hsl(0, 0%, 4%); /* DONE neutral-900 #0A0A0A */
 
-	--secondary: oklch(0.97 0 0);
-	--secondary-foreground: oklch(0.205 0 0);
+	--secondary: hsl(240, 3%, 13%); /* DONE neutral-600 */
+	--secondary-foreground: hsl(0, 0%, 100%); /* DONE neutral-50 #FFFFFF */
 
 	--muted: oklch(0.97 0 0);
 	--muted-foreground: oklch(0.556 0 0);
@@ -146,7 +146,7 @@
 	--destructive: oklch(0.577 0.245 27.325);
 	--border: hsl(0, 0%, 24%); /* DONE neutral-400 #3D3D3D */
 	--input: hsl(240, 4%, 9%); /* DONE neutral-700 #171719 */
-	--ring: oklch(0.708 0 0);
+	--ring: hsl(71, 92%, 60%);
 
 	--rate-positive: hsl(104, 96%, 47%); /* DONE green-500 #42EB05 */
 	--rate-negative: hsl(0, 100%, 63%); /* DONE red-500 #FF4141 */
@@ -171,4 +171,14 @@
 	html {
 		@apply font-mono;
 	}
+}
+
+@utility no-spinner {
+	&::-webkit-outer-spin-button,
+	&::-webkit-inner-spin-button {
+		-webkit-appearance: none;
+		margin: 0;
+	}
+	-moz-appearance: textfield;
+	appearance: textfield;
 }
