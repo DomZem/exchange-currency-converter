@@ -1,3 +1,4 @@
+import { CheckRate } from '@/components/sth/check-rate';
 import { LiveMarketsSlider } from '@/components/sth/live-markets-slider';
 import { Logo } from '@/components/ui/logo';
 
@@ -18,7 +19,9 @@ export default function Home() {
 
 			<LiveMarketsSlider />
 
-			<main className='max-w-6xl w-full mx-auto px-4 space-y-10 lg:space-y-8 py-8'></main>
+			<main className='max-w-6xl w-full mx-auto px-4 space-y-10 lg:space-y-8 py-8'>
+				<CheckRate />
+			</main>
 		</div>
 	);
 }

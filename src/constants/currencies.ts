@@ -1,296 +1,244 @@
-export const CURRENCIES: {
-	name: string;
-	value: string;
-	iconSrc: string;
-}[] = [
+export const CURRENCIES: Record<
+	string,
 	{
+		name: string;
+		iconSrc: string;
+		isPopular?: boolean;
+	}
+> = {
+	USD: {
 		name: 'US Dollar',
-		value: 'USD',
-		iconSrc: '/assets/flags/us.svg',
+		iconSrc: '/flags/us.svg',
+		isPopular: true,
 	},
-	{
+	AED: {
 		name: 'United Arab Emirates Dirham',
-		value: 'AED',
-		iconSrc: '/assets/flags/ae.svg',
+		iconSrc: '/flags/ae.svg',
 	},
-	{
+	ARS: {
 		name: 'Argentine Peso',
-		value: 'ARS',
-		iconSrc: '/assets/flags/ar.svg',
+		iconSrc: '/flags/ar.svg',
 	},
-	{
+	AUD: {
 		name: 'Australian Dollar',
-		value: 'AUD',
-		iconSrc: '/assets/flags/au.svg',
+		iconSrc: '/flags/au.svg',
 	},
-	{
+	BDT: {
 		name: 'Bangladeshi Taka',
-		value: 'BDT',
-		iconSrc: '/assets/flags/bd.svg',
+		iconSrc: '/flags/bd.svg',
 	},
-	{
+	BGN: {
 		name: 'Bulgarian Lev',
-		value: 'BGN',
-		iconSrc: '/assets/flags/bg.svg',
+		iconSrc: '/flags/bg.svg',
 	},
-	{
+	BHD: {
 		name: 'Bahraini Dinar',
-		value: 'BHD',
-		iconSrc: '/assets/flags/bh.svg',
+		iconSrc: '/flags/bh.svg',
 	},
-	{
+	BRL: {
 		name: 'Brazilian Real',
-		value: 'BRL',
-		iconSrc: '/assets/flags/br.svg',
+		iconSrc: '/flags/br.svg',
 	},
-	{
+	CAD: {
 		name: 'Canadian Dollar',
-		value: 'CAD',
-		iconSrc: '/assets/flags/ca.svg',
+		iconSrc: '/flags/ca.svg',
 	},
-	{
+	CHF: {
 		name: 'Swiss Franc',
-		value: 'CHF',
-		iconSrc: '/assets/flags/ch.svg',
+		iconSrc: '/flags/ch.svg',
 	},
-	{
+	CLP: {
 		name: 'Chilean Peso',
-		value: 'CLP',
-		iconSrc: '/assets/flags/cl.svg',
+		iconSrc: '/flags/cl.svg',
 	},
-	{
+	CNY: {
 		name: 'Chinese Yuan',
-		value: 'CNY',
-		iconSrc: '/assets/flags/cn.svg',
+		iconSrc: '/flags/cn.svg',
 	},
-	{
+	COP: {
 		name: 'Colombian Peso',
-		value: 'COP',
-		iconSrc: '/assets/flags/co.svg',
+		iconSrc: '/flags/co.svg',
 	},
-	{
+	EUR: {
 		name: 'Euro',
-		value: 'EUR',
-		iconSrc: '/assets/flags/eu.svg',
+		iconSrc: '/flags/eu.svg',
+		isPopular: true,
 	},
-	{
+	CZK: {
 		name: 'Czech Koruna',
-		value: 'CZK',
-		iconSrc: '/assets/flags/cz.svg',
+		iconSrc: '/flags/cz.svg',
 	},
-	{
+	DKK: {
 		name: 'Danish Krone',
-		value: 'DKK',
-		iconSrc: '/assets/flags/dk.svg',
+		iconSrc: '/flags/dk.svg',
 	},
-	{
+	EGP: {
 		name: 'Egyptian Pound',
-		value: 'EGP',
-		iconSrc: '/assets/flags/eg.svg',
+		iconSrc: '/flags/eg.svg',
 	},
-	{
+	GBP: {
 		name: 'British Pound',
-		value: 'GBP',
-		iconSrc: '/assets/flags/gb.svg',
+		iconSrc: '/flags/gb.svg',
+		isPopular: true,
 	},
-	{
+	HKD: {
 		name: 'Hong Kong Dollar',
-		value: 'HKD',
-		iconSrc: '/assets/flags/hk.svg',
+		iconSrc: '/flags/hk.svg',
 	},
-	{
+	HNL: {
 		name: 'Honduran Lempira',
-		value: 'HNL',
-		iconSrc: '/assets/flags/hn.svg',
+		iconSrc: '/flags/hn.svg',
 	},
-	{
+	HRK: {
 		name: 'Croatian Kuna',
-		value: 'HRK',
-		iconSrc: '/assets/flags/hr.svg',
+		iconSrc: '/flags/hr.svg',
 	},
-	{
+	HTG: {
 		name: 'Haitian Gourde',
-		value: 'HTG',
-		iconSrc: '/assets/flags/ht.svg',
+		iconSrc: '/flags/ht.svg',
 	},
-	{
+	HUF: {
 		name: 'Hungarian Forint',
-		value: 'HUF',
-		iconSrc: '/assets/flags/hu.svg',
+		iconSrc: '/flags/hu.svg',
 	},
-	{
+	IDR: {
 		name: 'Indonesian Rupiah',
-		value: 'IDR',
-		iconSrc: '/assets/flags/id.svg',
+		iconSrc: '/flags/id.svg',
 	},
-	{
+	INR: {
 		name: 'Indian Rupee',
-		value: 'INR',
-		iconSrc: '/assets/flags/in.svg',
+		iconSrc: '/flags/in.svg',
 	},
-	{
+	ISK: {
 		name: 'Icelandic Króna',
-		value: 'ISK',
-		iconSrc: '/assets/flags/is.svg',
+		iconSrc: '/flags/is.svg',
 	},
-	{
+	JOD: {
 		name: 'Jordanian Dinar',
-		value: 'JOD',
-		iconSrc: '/assets/flags/jo.svg',
+		iconSrc: '/flags/jo.svg',
 	},
-	{
+	JPY: {
 		name: 'Japanese Yen',
-		value: 'JPY',
-		iconSrc: '/assets/flags/jp.svg',
+		iconSrc: '/flags/jp.svg',
 	},
-	{
+	KES: {
 		name: 'Kenyan Shilling',
-		value: 'KES',
-		iconSrc: '/assets/flags/ke.svg',
+		iconSrc: '/flags/ke.svg',
 	},
-	{
+	KRW: {
 		name: 'South Korean Won',
-		value: 'KRW',
-		iconSrc: '/assets/flags/kr.svg',
+		iconSrc: '/flags/kr.svg',
 	},
-	{
+	KWD: {
 		name: 'Kuwaiti Dinar',
-		value: 'KWD',
-		iconSrc: '/assets/flags/kw.svg',
+		iconSrc: '/flags/kw.svg',
 	},
-	{
+	LBP: {
 		name: 'Lebanese Pound',
-		value: 'LBP',
-		iconSrc: '/assets/flags/lb.svg',
+		iconSrc: '/flags/lb.svg',
 	},
-	{
+	XCD: {
 		name: 'East Caribbean Dollar',
-		value: 'XCD',
-		iconSrc: '/assets/flags/lc.svg',
+		iconSrc: '/flags/lc.svg',
 	},
-	{
+	LKR: {
 		name: 'Sri Lankan Rupee',
-		value: 'LKR',
-		iconSrc: '/assets/flags/lk.svg',
+		iconSrc: '/flags/lk.svg',
 	},
-	{
+	MAD: {
 		name: 'Moroccan Dirham',
-		value: 'MAD',
-		iconSrc: '/assets/flags/ma.svg',
+		iconSrc: '/flags/ma.svg',
 	},
-	{
+	MXN: {
 		name: 'Mexican Peso',
-		value: 'MXN',
-		iconSrc: '/assets/flags/mx.svg',
+		iconSrc: '/flags/mx.svg',
 	},
-	{
+	MYR: {
 		name: 'Malaysian Ringgit',
-		value: 'MYR',
-		iconSrc: '/assets/flags/my.svg',
+		iconSrc: '/flags/my.svg',
 	},
-	{
+	NGN: {
 		name: 'Nigerian Naira',
-		value: 'NGN',
-		iconSrc: '/assets/flags/ng.svg',
+		iconSrc: '/flags/ng.svg',
 	},
-	{
+	NOK: {
 		name: 'Norwegian Krone',
-		value: 'NOK',
-		iconSrc: '/assets/flags/no.svg',
+		iconSrc: '/flags/no.svg',
 	},
-	{
+	NPR: {
 		name: 'Nepalese Rupee',
-		value: 'NPR',
-		iconSrc: '/assets/flags/np.svg',
+		iconSrc: '/flags/np.svg',
 	},
-	{
+	NZD: {
 		name: 'New Zealand Dollar',
-		value: 'NZD',
-		iconSrc: '/assets/flags/nz.svg',
+		iconSrc: '/flags/nz.svg',
 	},
-	{
+	OMR: {
 		name: 'Omani Rial',
-		value: 'OMR',
-		iconSrc: '/assets/flags/om.svg',
+		iconSrc: '/flags/om.svg',
 	},
-	{
+	PEN: {
 		name: 'Peruvian Sol',
-		value: 'PEN',
-		iconSrc: '/assets/flags/pe.svg',
+		iconSrc: '/flags/pe.svg',
 	},
-	{
+	PHP: {
 		name: 'Philippine Peso',
-		value: 'PHP',
-		iconSrc: '/assets/flags/ph.svg',
+		iconSrc: '/flags/ph.svg',
 	},
-	{
+	PKR: {
 		name: 'Pakistani Rupee',
-		value: 'PKR',
-		iconSrc: '/assets/flags/pk.svg',
+		iconSrc: '/flags/pk.svg',
 	},
-	{
+	PLN: {
 		name: 'Polish Złoty',
-		value: 'PLN',
-		iconSrc: '/assets/flags/pl.svg',
+		iconSrc: '/flags/pl.svg',
 	},
-	{
+	QAR: {
 		name: 'Qatari Riyal',
-		value: 'QAR',
-		iconSrc: '/assets/flags/qa.svg',
+		iconSrc: '/flags/qa.svg',
 	},
-	{
+	RON: {
 		name: 'Romanian Leu',
-		value: 'RON',
-		iconSrc: '/assets/flags/ro.svg',
+		iconSrc: '/flags/ro.svg',
 	},
-	{
+	RUB: {
 		name: 'Russian Ruble',
-		value: 'RUB',
-		iconSrc: '/assets/flags/ru.svg',
+		iconSrc: '/flags/ru.svg',
 	},
-	{
+	SAR: {
 		name: 'Saudi Riyal',
-		value: 'SAR',
-		iconSrc: '/assets/flags/sa.svg',
+		iconSrc: '/flags/sa.svg',
 	},
-	{
+	SEK: {
 		name: 'Swedish Krona',
-		value: 'SEK',
-		iconSrc: '/assets/flags/se.svg',
+		iconSrc: '/flags/se.svg',
 	},
-	{
+	SGD: {
 		name: 'Singapore Dollar',
-		value: 'SGD',
-		iconSrc: '/assets/flags/sg.svg',
+		iconSrc: '/flags/sg.svg',
 	},
-	{
+	THB: {
 		name: 'Thai Baht',
-		value: 'THB',
-		iconSrc: '/assets/flags/th.svg',
+		iconSrc: '/flags/th.svg',
 	},
-	{
+	TRY: {
 		name: 'Turkish Lira',
-		value: 'TRY',
-		iconSrc: '/assets/flags/tr.svg',
+		iconSrc: '/flags/tr.svg',
 	},
-	{
+	TWD: {
 		name: 'Taiwan Dollar',
-		value: 'TWD',
-		iconSrc: '/assets/flags/tw.svg',
+		iconSrc: '/flags/tw.svg',
 	},
-	{
+	UAH: {
 		name: 'Ukrainian Hryvnia',
-		value: 'UAH',
-		iconSrc: '/assets/flags/ua.svg',
+		iconSrc: '/flags/ua.svg',
 	},
-	{
+	VND: {
 		name: 'Vietnamese Dong',
-		value: 'VND',
-		iconSrc: '/assets/flags/vn.svg',
+		iconSrc: '/flags/vn.svg',
 	},
-	{
+	ZAR: {
 		name: 'South African Rand',
-		value: 'ZAR',
-		iconSrc: '/assets/flags/za.svg',
+		iconSrc: '/flags/za.svg',
 	},
-] as const;
+} as const;
