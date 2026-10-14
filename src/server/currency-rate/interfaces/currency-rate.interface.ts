@@ -1,17 +1,12 @@
-export interface ICurrencyRate {
-	getCurrentRate(args: { base: string; quote: string }): Promise<{
-		date: Date;
-		base: string;
-		quote: string;
-		rate: number;
-	}>;
+import { CurrencyRate } from "../types/currency-rate";
 
-	getHistoricalRates(args: { dateFrom: string; dateTo: string }): Promise<
-		{
-			date: Date;
-			base: string;
-			quote: string;
-			rate: number;
-		}[]
-	>;
+export interface ICurrencyRateService {
+  getCurrentRate(args: { base: string; quote: string }): Promise<CurrencyRate>;
+
+  getHistoricalRates(args: {
+    dateFrom: string;
+    dateTo: string;
+  }): Promise<CurrencyRate[]>;
+
+  getLatestRatesByBase(base: string): Promise<CurrencyRate[]>;
 }
