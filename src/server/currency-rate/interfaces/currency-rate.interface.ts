@@ -1,4 +1,4 @@
-import { CurrencyRate } from "../types/currency-rate";
+import type { CurrencyRate } from "../types/currency-rate";
 
 export interface ICurrencyRateService {
   getCurrentRate(args: { base: string; quote: string }): Promise<CurrencyRate>;
@@ -9,4 +9,11 @@ export interface ICurrencyRateService {
   }): Promise<CurrencyRate[]>;
 
   getLatestRatesByBase(base: string): Promise<CurrencyRate[]>;
+
+  getHistoricalRatePair(args: {
+    base: string;
+    quote: string;
+    from: string;
+    to: string;
+  }): Promise<CurrencyRate[]>;
 }

@@ -1,4 +1,4 @@
-import { ICurrencyRateService } from "../interfaces/currency-rate.interface";
+import type { ICurrencyRateService } from "../interfaces/currency-rate.interface";
 import { FrankfurterRateService } from "../services/frankfurter-rate.service";
 
 export class CurrencyRateFactory {

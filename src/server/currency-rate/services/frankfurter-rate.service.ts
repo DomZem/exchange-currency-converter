@@ -1,5 +1,5 @@
-import { ICurrencyRateService } from "../interfaces/currency-rate.interface";
-import { CurrencyRate } from "../types/currency-rate";
+import type { ICurrencyRateService } from "../interfaces/currency-rate.interface";
+import type { CurrencyRate } from "../types/currency-rate";
 
 export class FrankfurterRateService implements ICurrencyRateService {
   private readonly API_URL = "https://api.frankfurter.dev/v2";
@@ -45,6 +45,35 @@ export class FrankfurterRateService implements ICurrencyRateService {
 
     if (!res.ok) {
       throw new Error(`Failed to fetch something: ${res.statusText}`);
+    }
+
+    return res.json();
+  }
+
+  public async getHistoricalRatePair({
+    base,
+    quote,
+    from,
+    to,
+  }: {
+    base: string;
+    quote: string;
+    from: string;
+    to: string;
+  }): Promise<CurrencyRate[]> {
+    const params = new URLSearchParams({
+      base,
+      quotes: quote,
+      from,
+      to,
+    });
+
+    const res = await fetch(`${this.API_URL}/rates?${params.toString()}`);
+
+    if (!res.ok) {
+      throw new Error(
+        `Failed to fetch historical currency rates: ${res.statusText}`,
+      );
     }
 
     return res.json();
