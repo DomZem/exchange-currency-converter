@@ -103,6 +103,7 @@ const FavouriteCurrencyCardPercentage = ({
       ) : (
         <Triangle className="fill-rate-negative rotate-180" size={8} />
       )}
+
       <span>
         {isPositive ? "+" : null}
         {percentage.toFixed(2)}%

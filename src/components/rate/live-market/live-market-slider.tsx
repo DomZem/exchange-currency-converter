@@ -20,7 +20,12 @@ export function LiveMarketSlider() {
         <p className="text-preset-5-medium uppercase">live markets</p>
       </div>
 
-      <InfiniteSlider className="bg-neutral-500" speedOnHover={20} gap={0}>
+      <InfiniteSlider
+        className="bg-neutral-500"
+        reverse
+        speedOnHover={20}
+        gap={0}
+      >
         {liveMarkets.map((rate) => (
           <LiveMarketCard className="w-full" key={rate.pair}>
             <LiveMarketCardLabel>{rate.pair}</LiveMarketCardLabel>

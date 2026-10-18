@@ -1,4 +1,4 @@
-import { TrendingDown, TrendingUp } from "lucide-react";
+import { Triangle } from "lucide-react";
 import type { ComponentProps } from "react";
 
 import { cn } from "@/lib/utils";
@@ -55,20 +55,20 @@ const LiveMarketCardChange = ({
   value: number;
   className?: string;
 }) => {
-  const isPositive = value > 0;
+  const isPositive = value >= 0;
 
   return (
     <div
       className={cn(
-        "inline-flex items-center gap-1",
+        "inline-flex items-center gap-1.5",
         isPositive ? "text-rate-positive" : "text-rate-negative",
         className,
       )}
     >
       {isPositive ? (
-        <TrendingUp className="size-3.5" />
+        <Triangle className="fill-rate-positive" size={8} />
       ) : (
-        <TrendingDown className="size-3.5" />
+        <Triangle className="fill-rate-negative rotate-180" size={8} />
       )}
 
       <span>
