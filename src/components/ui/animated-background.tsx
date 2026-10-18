@@ -1,16 +1,16 @@
 "use client";
 
-import { cn } from "@/lib/utils";
-
-import { AnimatePresence, type Transition, motion } from "motion/react";
+import { AnimatePresence, motion,type Transition } from "motion/react";
 import {
   Children,
   cloneElement,
   type ReactElement,
   useEffect,
-  useState,
   useId,
+  useState,
 } from "react";
+
+import { cn } from "@/lib/utils";
 
 export type AnimatedBackgroundProps = {
   children:
