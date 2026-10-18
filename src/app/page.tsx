@@ -2,6 +2,7 @@ import { dehydrate, HydrationBoundary, noop } from "@tanstack/react-query";
 
 import { CheckRate } from "@/components/rate/check-rate/check-rate";
 import { LiveMarketSlider } from "@/components/rate/live-market/live-market-slider";
+import { RateTabs } from "@/components/rate/rate-tabs/rate-tabs";
 import { Logo } from "@/components/ui/logo";
 import { CURRENCIES } from "@/constants/currencies";
 import { getQueryClient } from "@/lib/query-client";
@@ -38,6 +39,7 @@ export default function HomePage() {
 
       <main className="mx-auto w-full max-w-6xl space-y-10 px-4 py-8 lg:space-y-8">
         <CheckRate />
+        <RateTabs />
       </main>
     </div>
   );
