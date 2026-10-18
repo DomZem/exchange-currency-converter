@@ -4,7 +4,7 @@ import type { CurrencyRate } from "../types/currency-rate";
 export class FrankfurterRateService implements ICurrencyRateService {
   private readonly API_URL = "https://api.frankfurter.dev/v2";
 
-  public async getCurrentRate({
+  public async getCurrencyRate({
     base,
     quote,
   }: {
