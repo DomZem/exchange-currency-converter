@@ -1,64 +1,50 @@
-import { CurrencyRateFactory } from '@/server/currency-rate/factories/currency-rate.factory';
-import { queryOptions, useQuery } from '@tanstack/react-query';
-import dayjs from 'dayjs';
+import { useQuery, useSuspenseQuery } from "@tanstack/react-query";
+
+import {
+  todayRatesQueryOptions,
+  yesterdayRatesQueryOptions,
+} from "@/queries/rate-query";
 
 export function useLiveMarket() {
-	const today = dayjs().format('YYYY-MM-DD');
-	const yesterday = dayjs().subtract(1, 'day').format('YYYY-MM-DD');
+  const { data: todayRates, isPending: isTodayRatesPending } = useSuspenseQuery(
+    todayRatesQueryOptions,
+  );
 
-	const { data: todayRates, isPending: isTodayRatesPending } = useQuery(
-		queryOptions({
-			queryKey: ['historical-rate', 'today', today],
-			queryFn: async () => {
-				const factory = new CurrencyRateFactory();
-				const service = factory.createService();
+  const { data: yesterdayRates, isPending: isYesterdayRatesPending } = useQuery(
+    yesterdayRatesQueryOptions,
+  );
 
-				return await service.getHistoricalRates({ dateFrom: today, dateTo: today });
-			},
-		}),
-	);
+  const data: {
+    pair: string;
+    value: number;
+    change: number;
+  }[] = [];
 
-	const { data: yesterdayRates, isPending: isYesterdayRatesPending } = useQuery(
-		queryOptions({
-			queryKey: ['historical-rate', 'yesterday', yesterday],
-			queryFn: async () => {
-				const factory = new CurrencyRateFactory();
-				const service = factory.createService();
+  if (todayRates && yesterdayRates) {
+    todayRates.forEach((todayRate) => {
+      const yesterdayRate = yesterdayRates.find(
+        (y) => y.base === todayRate.base && y.quote === todayRate.quote,
+      );
 
-				return await service.getHistoricalRates({ dateFrom: yesterday, dateTo: yesterday });
-			},
-		}),
-	);
+      const currentValue = Number(todayRate.rate);
+      const previousValue = yesterdayRate ? Number(yesterdayRate.rate) : null;
 
-	const data: {
-		pair: string;
-		value: number;
-		change: number;
-	}[] = [];
+      let change = 0;
 
-	if (todayRates && yesterdayRates) {
-		todayRates.forEach((todayRate) => {
-			const yesterdayRate = yesterdayRates.find((y) => y.base === todayRate.base && y.quote === todayRate.quote);
+      if (previousValue && !isNaN(currentValue) && !isNaN(previousValue)) {
+        change = ((currentValue - previousValue) / previousValue) * 100;
+      }
 
-			const currentValue = Number(todayRate.rate);
-			const previousValue = yesterdayRate ? Number(yesterdayRate.rate) : null;
+      data.push({
+        pair: `${todayRate.base}/${todayRate.quote}`,
+        value: currentValue || 0,
+        change: parseFloat(change.toFixed(2)),
+      });
+    });
+  }
 
-			let change = 0;
-
-			if (previousValue && !isNaN(currentValue) && !isNaN(previousValue)) {
-				change = ((currentValue - previousValue) / previousValue) * 100;
-			}
-
-			data.push({
-				pair: `${todayRate.base}/${todayRate.quote}`,
-				value: currentValue || 0,
-				change: parseFloat(change.toFixed(2)),
-			});
-		});
-	}
-
-	return {
-		data,
-		isPending: isTodayRatesPending || isYesterdayRatesPending,
-	};
+  return {
+    data,
+    isPending: isTodayRatesPending || isYesterdayRatesPending,
+  };
 }
