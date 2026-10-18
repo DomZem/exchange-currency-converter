@@ -9,6 +9,7 @@ import {
   SelectValue,
 } from "@/components/ui/select";
 
+import { RateComparisons } from "./comparison/rate-comparisons";
 import { RateHistory } from "./history/rate-history";
 
 type Tab = "history" | "compare" | "favourites" | "log";
@@ -36,6 +37,7 @@ export function MobileRateTabs() {
       </Select>
 
       {selectedTab === "history" && <RateHistory />}
+      {selectedTab === "compare" && <RateComparisons />}
     </div>
   );
 }

@@ -2,6 +2,7 @@ import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { useConversions } from "@/hooks/use-conversions";
 import { useFavouriteCurrencies } from "@/hooks/use-favourite-currencies";
 
+import { RateComparisons } from "./comparison/rate-comparisons";
 import { RateHistory } from "./history/rate-history";
 
 export function DesktopRateTabs() {
@@ -38,7 +39,9 @@ export function DesktopRateTabs() {
         <RateHistory />
       </TabsContent>
 
-      <TabsContent value="compare"></TabsContent>
+      <TabsContent value="compare">
+        <RateComparisons />
+      </TabsContent>
 
       <TabsContent value="favourites"></TabsContent>
 
