@@ -10,6 +10,7 @@ import {
 } from "@/components/ui/select";
 
 import { RateComparisons } from "./comparison/rate-comparisons";
+import { FavouriteCurrencies } from "./favourite/favourite-currencies";
 import { RateHistory } from "./history/rate-history";
 
 type Tab = "history" | "compare" | "favourites" | "log";
@@ -38,6 +39,7 @@ export function MobileRateTabs() {
 
       {selectedTab === "history" && <RateHistory />}
       {selectedTab === "compare" && <RateComparisons />}
+      {selectedTab === "favourites" && <FavouriteCurrencies />}
     </div>
   );
 }
