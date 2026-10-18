@@ -53,7 +53,7 @@ export function RateHistory() {
       last: latest,
       change: diff,
       percent,
-      ticks: [min, mid, max],
+      ticks: [...new Set([min, mid, max])],
     };
   }, [historyRates]);
 

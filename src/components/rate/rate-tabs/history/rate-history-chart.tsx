@@ -56,7 +56,7 @@ export function RateHistoryChart({
               <stop
                 offset="100%"
                 stopColor="var(--color-primary)"
-                stopOpacity={0.0}
+                stopOpacity={0}
               />
             </linearGradient>
           </defs>
