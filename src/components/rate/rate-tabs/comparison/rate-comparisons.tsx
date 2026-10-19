@@ -9,6 +9,12 @@ import {
   EmptyStateCardSubtitle,
   EmptyStateCardTitle,
 } from "../common/empty-state-card";
+import {
+  RateSectionCard,
+  RateSectionCardHeader,
+  RateSectionCardSubtitle,
+  RateSectionCardTitle,
+} from "../common/rate-section-card";
 import { RateComparisonsList } from "./rate-comparisons-list";
 
 export function RateComparisons() {
@@ -36,24 +42,26 @@ export function RateComparisons() {
   }
 
   return (
-    <div className="space-y-4 rounded-[1rem] border border-neutral-600 bg-neutral-700 p-4 md:space-y-5 md:p-5">
-      <div className="flex flex-col gap-2.5 md:flex-row md:items-center md:justify-between">
-        <div className="inline-flex items-baseline gap-3 uppercase">
-          <p className="text-preset-4 text-neutral-200">multi currency</p>
-          <p className="text-preset-3-medium text-white">
-            {sendCurrency.sendAmount} from {sendCurrency.currency}
+    <RateSectionCard>
+      <RateSectionCardHeader>
+        <div className="inline-flex items-baseline gap-3">
+          <p className="text-preset-4 text-neutral-200 uppercase">
+            multi currency
           </p>
+          <RateSectionCardTitle>
+            {sendCurrency.sendAmount} from {sendCurrency.currency}
+          </RateSectionCardTitle>
         </div>
 
-        <p className="text-preset-5-regular text-neutral-50 uppercase">
+        <RateSectionCardSubtitle>
           {filteredRates.length} pairs
-        </p>
-      </div>
+        </RateSectionCardSubtitle>
+      </RateSectionCardHeader>
 
       <RateComparisonsList
         sendCurrency={sendCurrency}
         currencyRates={filteredRates}
       />
-    </div>
+    </RateSectionCard>
   );
 }

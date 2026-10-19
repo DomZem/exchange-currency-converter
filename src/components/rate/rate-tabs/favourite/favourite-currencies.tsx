@@ -5,6 +5,11 @@ import {
   EmptyStateCardSubtitle,
   EmptyStateCardTitle,
 } from "../common/empty-state-card";
+import {
+  RateSectionCard,
+  RateSectionCardSubtitle,
+  RateSectionCardTitle,
+} from "../common/rate-section-card";
 import { FavouriteCurrenciesList } from "./favourite-currencies-list";
 
 export function FavouriteCurrencies() {
@@ -23,15 +28,15 @@ export function FavouriteCurrencies() {
   }
 
   return (
-    <div className="space-y-4 rounded-[1rem] border border-neutral-600 bg-neutral-700 p-4 md:space-y-5 md:p-5">
-      <div className="flex items-center justify-between uppercase">
-        <p className="text-preset-3-medium text-neutral-200">pinned pairs</p>
-        <p className="text-preset-5-regular text-neutral-50">
+    <RateSectionCard>
+      <div className="flex items-center justify-between">
+        <RateSectionCardTitle>pinned pairs</RateSectionCardTitle>
+        <RateSectionCardSubtitle>
           {favouriteCurrencies.length} favourites
-        </p>
+        </RateSectionCardSubtitle>
       </div>
 
       <FavouriteCurrenciesList />
-    </div>
+    </RateSectionCard>
   );
 }

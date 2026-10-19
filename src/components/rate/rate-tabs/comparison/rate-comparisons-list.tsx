@@ -5,6 +5,7 @@ import type { CurrencyRate } from "@/api/currency-rate/types/currency-rate";
 import { Button } from "@/components/ui/button";
 import { CURRENCIES } from "@/constants/currencies";
 
+import { RateList } from "../common/rate-list";
 import {
   RateComparisonCard,
   RateComparisonCardActions,
@@ -27,7 +28,7 @@ export function RateComparisonsList({
   };
 }) {
   return (
-    <ul className="grid gap-3">
+    <RateList>
       {currencyRates.map((currencyRate) => {
         const currency = CURRENCIES[currencyRate.quote];
         const convertedAmount =
@@ -72,6 +73,6 @@ export function RateComparisonsList({
           </li>
         );
       })}
-    </ul>
+    </RateList>
   );
 }

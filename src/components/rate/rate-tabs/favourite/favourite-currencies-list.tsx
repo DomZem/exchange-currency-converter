@@ -3,6 +3,7 @@ import { ArrowRight, Star } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { useFavouriteCurrencies } from "@/hooks/use-favourite-currencies";
 
+import { RateList } from "../common/rate-list";
 import {
   FavouriteCurrencyCard,
   FavouriteCurrencyCardContent,
@@ -17,7 +18,7 @@ export function FavouriteCurrenciesList() {
     useFavouriteCurrencies();
 
   return (
-    <ul className="grid gap-3">
+    <RateList>
       {favouriteCurrencies.map((favouriteCurrency) => (
         <li key={favouriteCurrency.id}>
           <FavouriteCurrencyCard>
@@ -51,6 +52,6 @@ export function FavouriteCurrenciesList() {
           </FavouriteCurrencyCard>
         </li>
       ))}
-    </ul>
+    </RateList>
   );
 }
