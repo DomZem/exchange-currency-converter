@@ -19,9 +19,7 @@ export function useFavouriteCurrencies() {
     favouriteCurrencies,
     setFavouriteCurrencies,
     removeFavouriteCurrencies,
-  ] = useLocalStorage<FavouriteCurrency[]>("favourite-currencies", [], {
-    initializeWithValue: false,
-  });
+  ] = useLocalStorage<FavouriteCurrency[]>("favourite-currencies", []);
 
   const sendCurrency = useAtomValue(sendCurrencyAtom);
   const receiveCurrency = useAtomValue(receiveCurrencyAtom);
