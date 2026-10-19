@@ -3,6 +3,7 @@ import { useConversions } from "@/hooks/use-conversions";
 import { useFavouriteCurrencies } from "@/hooks/use-favourite-currencies";
 
 import { RateComparisons } from "./comparison/rate-comparisons";
+import { ConversionLogs } from "./conversion-log/conversion-logs";
 import { FavouriteCurrencies } from "./favourite/favourite-currencies";
 import { RateHistory } from "./history/rate-history";
 
@@ -48,7 +49,9 @@ export function DesktopRateTabs() {
         <FavouriteCurrencies />
       </TabsContent>
 
-      <TabsContent value="log"></TabsContent>
+      <TabsContent value="log">
+        <ConversionLogs />
+      </TabsContent>
     </Tabs>
   );
 }
